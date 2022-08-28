@@ -1,0 +1,29 @@
+{ "app": {
+   
+   "title": "BERRY_IMU",
+   "version": "0.9.0",
+   "owner": "OpenSatkit",
+   "url": "https://github.com/OpenSatKit-Apps/berry_imu",
+
+   "description": [
+      "This app interfaces to the Ozzmaker Berry IMU https://github.com/ozzmaker/BerryIMU",
+      "on a Raspberry Pi. It also serves as an example of using the I2C interface."
+   ],
+
+   "cfs": {
+      "cfe-type": "CFE_APP",
+      "obj-file": "berry_imu",
+      "entry-symbol": "BERRY_IMU_AppMain",
+      "name": "BERRY_IMU",
+      "priority": 70,
+      "stack": 32768,
+      "load_addr": 0,
+      "exception-action": 0,
+      "app-framework": "osk",
+      "tables": ["berry_imu_ini.json"],
+      "cmd-mid": "GPIO_DEMO_CMD_MID"
+   }
+   
+}}
+
+
