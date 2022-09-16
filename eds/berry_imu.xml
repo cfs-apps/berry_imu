@@ -179,12 +179,6 @@
               <GenericTypeMap name="TelecommandDataType" type="CommandBase" />
             </GenericTypeMapSet>
           </Interface>
-          <Interface name="SEND_HK" shortDescription="Signal app to send its housekeeping telemetry command interface" type="CFE_SB/Telecommand">
-            <!-- This uses a bare spacepacket with no payload -->
-            <GenericTypeMapSet>
-              <GenericTypeMap name="TelecommandDataType" type="CFE_HDR/CommandHeader" />
-            </GenericTypeMapSet>
-          </Interface>
           
           <Interface name="HK_TLM" shortDescription="Software bus housekeeping telemetry interface" type="CFE_SB/Telemetry">
             <GenericTypeMapSet>
@@ -206,14 +200,12 @@
         <Implementation>
           <VariableSet>
             <Variable type="BASE_TYPES/uint16" readOnly="true" name="CmdTopicId"       initialValue="${CFE_MISSION/BERRY_IMU_CMD_TOPICID}" />
-            <Variable type="BASE_TYPES/uint16" readOnly="true" name="SendHkTopicId"    initialValue="${CFE_MISSION/BERRY_IMU_SEND_HK_TOPICID}" />
             <Variable type="BASE_TYPES/uint16" readOnly="true" name="HkTlmTopicId"     initialValue="${CFE_MISSION/BERRY_IMU_HK_TLM_TOPICID}" />
             <Variable type="BASE_TYPES/uint16" readOnly="true" name="RateTlmTopicId"   initialValue="${CFE_MISSION/BERRY_IMU_RATE_TLM_TOPICID}" />
           </VariableSet>
           <!-- Assign fixed numbers to the "TopicId" parameter of each interface -->
           <ParameterMapSet>          
             <ParameterMap interface="CMD"        parameter="TopicId" variableRef="CmdTopicId" />
-            <ParameterMap interface="SEND_HK"    parameter="TopicId" variableRef="SendHkTopicId" />
             <ParameterMap interface="HK_TLM"     parameter="TopicId" variableRef="HkTlmTopicId" />
             <ParameterMap interface="RATE_TLM"   parameter="TopicId" variableRef="RateTlmTopicId" />
           </ParameterMapSet>

@@ -169,7 +169,7 @@ static int32 InitApp(void)
    
       BerryImu.PerfId    = INITBL_GetIntConfig(INITBL_OBJ, CFG_APP_PERF_ID);
       BerryImu.CmdMid    = CFE_SB_ValueToMsgId(INITBL_GetIntConfig(INITBL_OBJ, CFG_BERRY_IMU_CMD_TOPICID));
-      BerryImu.SendHkMid = CFE_SB_ValueToMsgId(INITBL_GetIntConfig(INITBL_OBJ, CFG_BERRY_IMU_SEND_HK_TOPICID));
+      BerryImu.SendHkMid = CFE_SB_ValueToMsgId(INITBL_GetIntConfig(INITBL_OBJ, CFG_BC_SCH_2_SEC_TOPICID));
 
       CFE_ES_PerfLogEntry(BerryImu.PerfId);
 
