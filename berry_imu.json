@@ -1,9 +1,12 @@
-{ "app": {
+{ 
+
+   "app": {
    
    "title": "BERRY_IMU",
    "version": "0.9.0",
-   "owner": "OpenSatkit",
-   "url": "https://github.com/OpenSatKit-Apps/berry_imu",
+   "supplier": "Open STEMware",
+   "copyright": "bitValence",
+   "url": "https://github.com/cfs-apps/berry_imu",
 
    "description": [
       "This app interfaces to the Ozzmaker Berry IMU https://github.com/ozzmaker/BerryIMU",
@@ -20,10 +23,11 @@
       "load_addr": 0,
       "exception-action": 0,
       "app-framework": "osk",
-      "tables": ["berry_imu_ini.json"],
-      "cmd-mid": "GPIO_DEMO_CMD_MID"
-   }
+      "tables": ["berry_imu_ini.json"]
+   },
    
+   "requires": ["osk_c_fw"]
+
 }}
 
 
